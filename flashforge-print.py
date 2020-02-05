@@ -102,6 +102,14 @@ class FlashForgeSend(object):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print('Invalid parameters.')
+        print()
+        print('Usage: %s <ip> <filename>' % sys.argv[0])
+        print()
+        print('Filename is for the gcode file, it will be uploaded to the printer and immediately printed.')
+        sys.exit(1)
+
     hostname = sys.argv[1]
     file_data = open(sys.argv[2], 'rb').read()
 
